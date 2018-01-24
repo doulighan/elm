@@ -1,0 +1,52 @@
+var _user$project$AnotherHello$createLi = function (str) {
+	return A2(
+		_elm_lang$html$Html$li,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(str),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$AnotherHello$renderList = function (lst) {
+	return A2(
+		_elm_lang$html$Html$ul,
+		{ctor: '[]'},
+		A2(_elm_lang$core$List$map, _user$project$AnotherHello$createLi, lst));
+};
+var _user$project$AnotherHello$checkStatus = function (status) {
+	return _elm_lang$core$Native_Utils.eq(status, 200) ? 'You got it' : (_elm_lang$core$Native_Utils.eq(status, 404) ? 'Page not found' : 'Bad response');
+};
+var _user$project$AnotherHello$statusChecks = {
+	ctor: '::',
+	_0: _user$project$AnotherHello$checkStatus(200),
+	_1: {
+		ctor: '::',
+		_0: _user$project$AnotherHello$checkStatus(404),
+		_1: {
+			ctor: '::',
+			_0: _user$project$AnotherHello$checkStatus(418),
+			_1: {ctor: '[]'}
+		}
+	}
+};
+var _user$project$AnotherHello$main = _elm_lang$virtual_dom$Native_VirtualDom.staticProgram(
+	A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$h1,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('list of statuses:'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: _user$project$AnotherHello$renderList(_user$project$AnotherHello$statusChecks),
+				_1: {ctor: '[]'}
+			}
+		}));

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Elm is cool</title>
+</head>
+<body>
+  <div id='hello-world'></div>
+  <script src='js/hello2.js'></script>
+  <script>
+    const myDiv = document.getElementById('hello-world')
+    const app = Elm.HelloTwo.embed(myDiv)
+  </script>
+</body>
+</html>
